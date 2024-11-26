@@ -1,0 +1,9 @@
+# Dependencies
+node_modules
+
+#dist
+dist
+
+# Environment varibales
+.env
+!.env*.example

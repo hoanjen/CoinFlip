@@ -1,0 +1,22 @@
+{
+  "name": "hardhat-project",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "contract:compile": "npx hardhat compile",
+    "contract:test": "npx hardhat test",
+    "contract:deploy": "npx hardhat run scripts/deploy.ts --network sepolia",
+    "contract:verify": "npx hardhat run scripts/verify.ts --network sepolia",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.16"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-ignition": "^0.15.8",
+    "@openzeppelin/contracts": "^5.1.0",
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2"
+  }
+}

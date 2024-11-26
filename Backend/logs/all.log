@@ -1,0 +1,96 @@
+2024-11-26 15:06:11:611 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 15:06:33:633 [35mhttp[39m: [35mGET / 200 31 - 3.164 ms[39m
+[35m[39m
+2024-11-26 15:06:33:633 [31merror[39m: [31mNot found[39m
+2024-11-26 15:06:33:633 [35mhttp[39m: [35mGET /favicon.ico 404 1092 - 8.823 ms[39m
+[35m[39m
+2024-11-26 15:06:40:640 [31merror[39m: [31mUser validation failed: wallet: Path `wallet` is required., profileImage: Path `profileImage` is required.[39m
+2024-11-26 15:06:40:640 [35mhttp[39m: [35mPOST /api/user 400 658 - 30.588 ms[39m
+[35m[39m
+2024-11-26 15:10:57:1057 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 15:11:04:114 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 15:11:11:1111 [35mhttp[39m: [35mPOST /api/user 201 258 - 43.070 ms[39m
+[35m[39m
+2024-11-26 15:20:46:2046 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 15:20:49:2049 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 15:20:51:2051 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 15:20:59:2059 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 15:21:25:2125 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 15:21:28:2128 [31merror[39m: [31mEmail already exists[39m
+2024-11-26 15:21:28:2128 [35mhttp[39m: [35mPOST /api/user 400 397 - 27.828 ms[39m
+[35m[39m
+2024-11-26 15:21:35:2135 [31merror[39m: [31mUser validation failed: wallet: Path `wallet` is required., profileImage: Path `profileImage` is required.[39m
+2024-11-26 15:21:35:2135 [35mhttp[39m: [35mPOST /api/user 400 658 - 16.059 ms[39m
+[35m[39m
+2024-11-26 15:22:17:2217 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 15:38:23:3823 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 15:38:41:3841 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:05:42:542 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:26:39:2639 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:26:49:2649 [31merror[39m: [31m"email" is not allowed, "username" is not allowed, "password" is not allowed[39m
+2024-11-26 16:26:49:2649 [35mhttp[39m: [35mPOST /api/auth 400 1339 - 19.889 ms[39m
+[35m[39m
+2024-11-26 16:26:52:2652 [35mhttp[39m: [35mGET /api/auth 200 57 - 2.910 ms[39m
+[35m[39m
+2024-11-26 16:27:02:272 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:27:05:275 [35mhttp[39m: [35mGET /api/auth 200 121 - 16.968 ms[39m
+[35m[39m
+2024-11-26 16:28:35:2835 [31merror[39m: [31m"wallet" is not allowed[39m
+2024-11-26 16:28:35:2835 [35mhttp[39m: [35mPOST /api/auth 400 1225 - 13.950 ms[39m
+[35m[39m
+2024-11-26 16:29:07:297 [31merror[39m: [31m"wallet" is not allowed[39m
+2024-11-26 16:29:07:297 [35mhttp[39m: [35mPOST /api/auth 400 1225 - 6.267 ms[39m
+[35m[39m
+2024-11-26 16:29:49:2949 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:29:52:2952 [31merror[39m: [31m"wallet" is not allowed[39m
+2024-11-26 16:29:52:2952 [35mhttp[39m: [35mPOST /api/auth 400 1225 - 13.861 ms[39m
+[35m[39m
+2024-11-26 16:30:34:3034 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:30:36:3036 [31merror[39m: [31m"wallet" is not allowed[39m
+2024-11-26 16:30:36:3036 [35mhttp[39m: [35mPOST /api/auth 400 1225 - 19.995 ms[39m
+[35m[39m
+2024-11-26 16:31:02:312 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:31:28:3128 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:31:34:3134 [31merror[39m: [31m"wallet" is not allowed[39m
+2024-11-26 16:31:34:3134 [35mhttp[39m: [35mPOST /api/auth 400 1225 - 11.365 ms[39m
+[35m[39m
+2024-11-26 16:32:07:327 [31merror[39m: [31m"wallet" is not allowed[39m
+2024-11-26 16:32:07:327 [35mhttp[39m: [35mPOST /api/auth 400 1225 - 5.730 ms[39m
+[35m[39m
+2024-11-26 16:32:36:3236 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:32:38:3238 [31merror[39m: [31mCannot read properties of undefined (reading 'verifyMessage')[39m
+2024-11-26 16:32:38:3238 [35mhttp[39m: [35mPOST /api/auth 500 860 - 18.935 ms[39m
+[35m[39m
+2024-11-26 16:32:51:3251 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:32:56:3256 [31merror[39m: [31mCannot read properties of undefined (reading 'verifyMessage')[39m
+2024-11-26 16:32:56:3256 [35mhttp[39m: [35mPOST /api/auth 500 860 - 20.002 ms[39m
+[35m[39m
+2024-11-26 16:33:12:3312 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:33:13:3313 [31merror[39m: [31mCannot read properties of undefined (reading 'verifyMessage')[39m
+2024-11-26 16:33:13:3313 [35mhttp[39m: [35mPOST /api/auth 500 860 - 20.944 ms[39m
+[35m[39m
+2024-11-26 16:33:56:3356 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:33:58:3358 [31merror[39m: [31minvalid BytesLike value (argument="signature", value="312", code=INVALID_ARGUMENT, version=6.13.4)[39m
+2024-11-26 16:33:58:3358 [35mhttp[39m: [35mPOST /api/auth 500 1389 - 23.679 ms[39m
+[35m[39m
+2024-11-26 16:36:59:3659 [31merror[39m: [31minvalid raw signature length (argument="signature", value="0xD837ab1cE7e4eA9B1F1173e31Ab90a3a57318546", code=INVALID_ARGUMENT, version=6.13.4)[39m
+2024-11-26 16:36:59:3659 [35mhttp[39m: [35mPOST /api/auth 500 1415 - 7.996 ms[39m
+[35m[39m
+2024-11-26 16:37:51:3751 [35mhttp[39m: [35mGET /api/auth 200 121 - 2.923 ms[39m
+[35m[39m
+2024-11-26 16:40:52:4052 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:41:05:415 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:41:10:4110 [31merror[39m: [31minvalid raw signature length (argument="signature", value="0xD837ab1cE7e4eA9B1F1173e31Ab90a3a57318546", code=INVALID_ARGUMENT, version=6.13.4)[39m
+2024-11-26 16:41:10:4110 [35mhttp[39m: [35mPOST /api/auth 500 1415 - 23.731 ms[39m
+[35m[39m
+2024-11-26 16:41:14:4114 [35mhttp[39m: [35mGET /api/auth 200 189 - 54.191 ms[39m
+[35m[39m
+2024-11-26 16:41:52:4152 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:41:57:4157 [35mhttp[39m: [35mPOST /api/auth 200 95 - 43.154 ms[39m
+[35m[39m
+2024-11-26 16:42:15:4215 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:42:17:4217 [35mhttp[39m: [35mPOST /api/auth 200 95 - 42.184 ms[39m
+[35m[39m
+2024-11-26 16:42:45:4245 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:45:25:4525 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-26 16:45:29:4529 [32minfo[39m: [32mConnected to MongoDB[39m

@@ -1,0 +1,17 @@
+2024-11-26 15:06:33:633 [31merror[39m: [31mNot found[39m
+2024-11-26 15:06:40:640 [31merror[39m: [31mUser validation failed: wallet: Path `wallet` is required., profileImage: Path `profileImage` is required.[39m
+2024-11-26 15:21:28:2128 [31merror[39m: [31mEmail already exists[39m
+2024-11-26 15:21:35:2135 [31merror[39m: [31mUser validation failed: wallet: Path `wallet` is required., profileImage: Path `profileImage` is required.[39m
+2024-11-26 16:26:49:2649 [31merror[39m: [31m"email" is not allowed, "username" is not allowed, "password" is not allowed[39m
+2024-11-26 16:28:35:2835 [31merror[39m: [31m"wallet" is not allowed[39m
+2024-11-26 16:29:07:297 [31merror[39m: [31m"wallet" is not allowed[39m
+2024-11-26 16:29:52:2952 [31merror[39m: [31m"wallet" is not allowed[39m
+2024-11-26 16:30:36:3036 [31merror[39m: [31m"wallet" is not allowed[39m
+2024-11-26 16:31:34:3134 [31merror[39m: [31m"wallet" is not allowed[39m
+2024-11-26 16:32:07:327 [31merror[39m: [31m"wallet" is not allowed[39m
+2024-11-26 16:32:38:3238 [31merror[39m: [31mCannot read properties of undefined (reading 'verifyMessage')[39m
+2024-11-26 16:32:56:3256 [31merror[39m: [31mCannot read properties of undefined (reading 'verifyMessage')[39m
+2024-11-26 16:33:13:3313 [31merror[39m: [31mCannot read properties of undefined (reading 'verifyMessage')[39m
+2024-11-26 16:33:58:3358 [31merror[39m: [31minvalid BytesLike value (argument="signature", value="312", code=INVALID_ARGUMENT, version=6.13.4)[39m
+2024-11-26 16:36:59:3659 [31merror[39m: [31minvalid raw signature length (argument="signature", value="0xD837ab1cE7e4eA9B1F1173e31Ab90a3a57318546", code=INVALID_ARGUMENT, version=6.13.4)[39m
+2024-11-26 16:41:10:4110 [31merror[39m: [31minvalid raw signature length (argument="signature", value="0xD837ab1cE7e4eA9B1F1173e31Ab90a3a57318546", code=INVALID_ARGUMENT, version=6.13.4)[39m
