@@ -11,8 +11,8 @@ const getNonce = catchAsync(async (req: Request, res: Response) => {
 });
 
 const signWallet = catchAsync(async (req: Request, res: Response) => {
-    const walletCheck = await authService.signWallet(req.body.nonce, req.body.walletAddress, req.body.signature);
-    res.status(StatusCodes.OK).json(response(StatusCodes.OK, 'Login Successfully', walletCheck));
+    const tokens = await authService.signWallet(req.body.nonce, req.body.walletAddress, req.body.signature);
+    res.status(StatusCodes.OK).json(response(StatusCodes.OK, 'Login Successfully', tokens));
 });
 
 export default { signWallet, getNonce };

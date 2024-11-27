@@ -7,17 +7,18 @@ export interface IUser extends Document {
     lastName: string;
     username?: string;
     profileImage?: string;
-    wallet: string;
+    walletAddress: string;
 }
 
 export interface IUserModel extends Model<IUser> {
     isEmailTaken(email: string, excludeUserId?: string): Promise<boolean>;
+    isUsernameTaken(username: string, excludeUserId?: string): Promise<boolean>;
     isEmail(email: string): boolean;
 }
 
 const userSchema = new mongoose.Schema<IUser>(
     {
-        wallet: {
+        walletAddress: {
             type: String,
             trim: true,
             required: true,
@@ -42,8 +43,9 @@ const userSchema = new mongoose.Schema<IUser>(
         },
         profileImage: {
             type: String,
-            default: '',
-            required: false,
+            default:
+                'https://mmomarket.s3.amazonaws.com/image/1732672665387-16410402-448d-4e49-8e76-142148d12dbf-410999535315211d48fc6e901348ef7d.png',
+            required: true,
         },
     },
     { timestamps: true },
@@ -54,6 +56,14 @@ userSchema.statics.isEmailTaken = async function (
     excludeUserId?: mongoose.Types.ObjectId,
 ): Promise<boolean> {
     const user = await this.findOne({ email, _id: { $ne: excludeUserId } });
+    return !!user;
+};
+
+userSchema.statics.isUsernameTaken = async function (
+    username: string,
+    excludeUserId?: mongoose.Types.ObjectId,
+): Promise<boolean> {
+    const user = await this.findOne({ username, _id: { $ne: excludeUserId } });
     return !!user;
 };
 

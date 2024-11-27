@@ -12,7 +12,7 @@ export const updateUser = {
     body: Joi.object().keys({
         email: Joi.string().email(),
         username: Joi.string(),
-        password: Joi.string(),
+        profileImage: Joi.string(),
     }),
 };
 
@@ -25,12 +25,6 @@ export const getUsers = {
     }),
 };
 
-export const getUser = {
-    params: Joi.object().keys({
-        userId: Joi.string(),
-    }),
-};
-
 export const deleteUser = {
     params: Joi.object().keys({
         userId: Joi.string(),
@@ -40,7 +34,6 @@ export const deleteUser = {
 export default {
     createUser,
     getUsers,
-    getUser,
     updateUser,
     deleteUser,
 };

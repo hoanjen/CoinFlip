@@ -1,26 +1,24 @@
 import mongoose, { Document, Model } from 'mongoose';
 
-const bettingSchema = new mongoose.Schema(
+const bettorSchema = new mongoose.Schema(
     {
         idBettingOnchain: {
             type: BigInt,
             required: true,
         },
-        gameOver: {
-            type: String,
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
             required: true,
         },
-        result: {
-            type: Boolean,
-            required: false,
-        },
-        startBlock: {
-            type: BigInt,
+        betting: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Betting',
             required: true,
         },
-        endBlock: {
+        amount: {
             type: BigInt,
-            required: false,
+            required: true,
         },
         blockTimeStamp: {
             type: BigInt,
@@ -30,6 +28,6 @@ const bettingSchema = new mongoose.Schema(
     { timestamps: true },
 );
 
-const Balance = mongoose.model('Betting', bettingSchema);
+const Balance = mongoose.model('Bettor', bettorSchema);
 
 export default Balance;

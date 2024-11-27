@@ -7,6 +7,8 @@ import crypto from 'crypto';
 import { ethers } from 'ethers';
 import ExceptionError from '../utils/exceptionError';
 import { StatusCodes } from 'http-status-codes';
+import tokenService from './token.service';
+import userService from './user.service';
 const getNonce = async () => {
     const nonce = crypto.randomBytes(32).toString('hex');
 
@@ -18,7 +20,14 @@ const signWallet = async (nonce: string, walletAddress: string, signature: strin
     if (walletCheck !== walletAddress) {
         throw new ExceptionError(StatusCodes.BAD_REQUEST, 'Invalid signature');
     }
-    return walletCheck;
+    let user = await userService.getUserByWalletAddress(walletAddress);
+
+    if (!user) {
+        user = await userService.createUser({ walletAddress });
+    }
+    const tokens = await tokenService.generateAuthTokens(user.id);
+
+    return tokens;
 };
 
 export default { getNonce, signWallet };

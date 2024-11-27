@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import User from '../models/user.model';
 import config from '../config/config';
-import { extractTokenFromHeader } from '../services/token.service';
+import tokenService from '../services/token.service';
 import { StatusCodes, getReasonPhrase } from 'http-status-codes';
 import catchAsync from '../utils/catchAsync';
 import ExceptionError from '../utils/exceptionError';
@@ -17,7 +17,7 @@ declare global {
 }
 
 const auth = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-    const token = extractTokenFromHeader(req);
+    const token = tokenService.extractTokenFromHeader(req);
     if (!token) {
         throw new ExceptionError(StatusCodes.UNAUTHORIZED, 'Not authorized');
     }

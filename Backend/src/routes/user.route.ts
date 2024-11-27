@@ -7,9 +7,9 @@ import userValidation from '../validations/user.validation';
 const userRouter = express.Router();
 
 userRouter
-    .route('/profile')
-    .get(validate(userValidation.getUser), userController.getUser)
-    .put(validate(userValidation.updateUser), userController.updateProfile);
+    .route('/user')
+    .get(auth, userController.getUser)
+    .put(validate(userValidation.updateUser), auth, userController.updateUser);
 
 userRouter.route('/').post(validate(userValidation.createUser), userController.createUser);
 

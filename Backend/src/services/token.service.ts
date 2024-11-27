@@ -11,12 +11,8 @@ interface PayLoad {
 }
 
 interface AuthTokens {
-    access: {
-        token: string;
-    };
-    refresh: {
-        token: string;
-    };
+    accessToken: string;
+    refreshToken: string;
 }
 
 const generateToken = (userId: string, expires: number, type: string, secret: string = config.jwt.secret): string => {
@@ -38,17 +34,13 @@ const verifyToken = async (token: string, type: string): Promise<PayLoad> => {
     return payload;
 };
 
-const generateAuthTokens = async (user: { id: string }): Promise<AuthTokens> => {
-    const accessToken = generateToken(user.id, config.jwt.accessExpirationDays, tokenTypes.ACCESS_TOKEN);
-    const refreshToken = generateToken(user.id, config.jwt.refreshExpirationDays, tokenTypes.REFRESH_TOKEN);
+const generateAuthTokens = async (userId: string): Promise<AuthTokens> => {
+    const accessToken = generateToken(userId, config.jwt.accessExpirationDays, tokenTypes.ACCESS_TOKEN);
+    const refreshToken = generateToken(userId, config.jwt.refreshExpirationDays, tokenTypes.REFRESH_TOKEN);
 
     return {
-        access: {
-            token: accessToken,
-        },
-        refresh: {
-            token: refreshToken,
-        },
+        accessToken,
+        refreshToken,
     };
 };
 
@@ -57,4 +49,4 @@ const extractTokenFromHeader = (request: Request): string | undefined => {
     return type === 'Bearer' ? token : undefined;
 };
 
-export { generateToken, verifyToken, generateAuthTokens, extractTokenFromHeader };
+export default { generateToken, verifyToken, generateAuthTokens, extractTokenFromHeader };

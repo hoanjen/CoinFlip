@@ -11,7 +11,7 @@ const createUser = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getUser = catchAsync(async (req: Request, res: Response) => {
-    const user = await userService.getUserById(req.params.userId || req.user?.userId);
+    const user = await userService.getUserById(req.user.userId);
     if (!user) {
         throw new ExceptionError(StatusCodes.NOT_FOUND, 'User not found');
     }
@@ -19,7 +19,7 @@ const getUser = catchAsync(async (req: Request, res: Response) => {
 });
 
 const updateUser = catchAsync(async (req: Request, res: Response) => {
-    const user = await userService.updateUserById(req.params.userId, req.body);
+    const user = await userService.updateUserById(req.user.userId, req.body);
     res.status(StatusCodes.OK).json(response(StatusCodes.OK, 'Successfully', user));
 });
 
@@ -28,15 +28,9 @@ const deleteUser = catchAsync(async (req: Request, res: Response) => {
     res.status(StatusCodes.OK).json(response(StatusCodes.OK, 'Successfully', user));
 });
 
-const updateProfile = catchAsync(async (req: Request, res: Response) => {
-    const user = await userService.updateUserById(req.user?.userId, req.body);
-    res.status(StatusCodes.OK).json(response(StatusCodes.OK, 'Successfully', user));
-});
-
 export default {
     createUser,
     getUser,
     updateUser,
     deleteUser,
-    updateProfile,
 };
