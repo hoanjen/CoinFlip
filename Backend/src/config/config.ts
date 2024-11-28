@@ -34,9 +34,9 @@ interface Config {
         accessExpirationDays: number;
         refreshExpirationDays: number;
     };
-    onchain?: {
-        block_number_start?: number;
-        network_rpc_url?: string;
+    onchain: {
+        block_number_start: number;
+        network_rpc_url: string;
     };
 }
 

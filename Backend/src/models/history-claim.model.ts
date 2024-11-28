@@ -6,6 +6,10 @@ const bettorSchema = new mongoose.Schema(
             type: BigInt,
             required: true,
         },
+        transactionHash: {
+            type: String,
+            required: true,
+        },
         user: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
@@ -21,7 +25,7 @@ const bettorSchema = new mongoose.Schema(
             required: true,
         },
         blockTimeStamp: {
-            type: BigInt,
+            type: Number,
             required: true,
         },
     },
