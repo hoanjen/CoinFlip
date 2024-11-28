@@ -23,11 +23,15 @@ const balanceSchema = new mongoose.Schema(
         },
         nativeCoin: {
             type: String,
+            default: 'ETH',
             required: false,
         },
         nativeCoinQuantity: {
-            type: String,
-            default: '',
+            type: BigInt,
+            required: true,
+        },
+        blockTimeStamp: {
+            type: Number,
             required: true,
         },
     },

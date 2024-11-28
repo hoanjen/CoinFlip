@@ -12,6 +12,10 @@ const bettorSchema = new mongoose.Schema(
             ref: 'Betting',
             required: true,
         },
+        transactionHash: {
+            type: String,
+            required: true,
+        },
         amount: {
             type: BigInt,
             required: true,
@@ -21,7 +25,7 @@ const bettorSchema = new mongoose.Schema(
             required: true,
         },
         blockTimeStamp: {
-            type: BigInt,
+            type: Number,
             required: true,
         },
     },

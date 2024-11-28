@@ -23,7 +23,7 @@ const bettingSchema = new mongoose.Schema(
             required: false,
         },
         blockTimeStamp: {
-            type: BigInt,
+            type: Number,
             required: true,
         },
     },

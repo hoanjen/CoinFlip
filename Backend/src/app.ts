@@ -7,11 +7,15 @@ import config from './config/config';
 import ExceptionError from './utils/exceptionError';
 import { ReasonPhrases, StatusCodes, getReasonPhrase, getStatusCode } from 'http-status-codes';
 import { errorConverter, errorHandler } from './middleware/error';
+import { getContractEvents } from './utils/synchronize';
+
 const app = express();
 
 if (config.env !== 'test') {
     app.use(morganMiddleware);
 }
+
+getContractEvents(7127342, 7127358);
 
 app.use(helmet());
 
