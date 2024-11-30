@@ -1,6 +1,6 @@
 import mongoose, { Document, Model } from 'mongoose';
 
-const bettorSchema = new mongoose.Schema(
+const historySchema = new mongoose.Schema(
     {
         idBettingOnchain: {
             type: BigInt,
@@ -25,13 +25,13 @@ const bettorSchema = new mongoose.Schema(
             required: true,
         },
         blockTimeStamp: {
-            type: Number,
+            type: BigInt,
             required: true,
         },
     },
     { timestamps: true },
 );
 
-const Balance = mongoose.model('Bettor', bettorSchema);
+const History = mongoose.model('History', historySchema);
 
-export default Balance;
+export default History;

@@ -23,13 +23,13 @@ const bettingSchema = new mongoose.Schema(
             required: false,
         },
         blockTimeStamp: {
-            type: Number,
+            type: BigInt,
             required: true,
         },
     },
     { timestamps: true },
 );
 
-const Balance = mongoose.model('Betting', bettingSchema);
+const Betting = mongoose.model('Betting', bettingSchema);
 
-export default Balance;
+export default Betting;

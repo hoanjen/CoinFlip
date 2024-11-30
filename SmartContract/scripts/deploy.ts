@@ -26,16 +26,17 @@ async function deployContracts() {
     console.log('Contracts are deploying...');
 
     const totalSupplyErc20: number = 1000; // 1000 token
-    const playFeePercentage: number = 25; // 2.5 %
+    const playFeePercentage: number = 10; // 2.5 %
     const playFeeDecimal: number = 1;
     const minBet: number = 1;
     const maxBet: number = 10;
 
     const erc20Token = await deploy('MyERC20Token', [totalSupplyErc20]);
-
+    console.log('done MyERC20Token');
     const erc20TokenAddress = await erc20Token.getAddress();
 
     const randContract = await deploy('RandContract', []);
+    console.log('done RandContract');
 
     const randContractAddress = await randContract.getAddress();
 
@@ -43,10 +44,10 @@ async function deployContracts() {
         minBet,
         maxBet,
         playFeePercentage,
-        playFeeDecimal,
         erc20TokenAddress,
         randContractAddress,
     ]);
+    console.log('done CoinFlip');
 
     const coinFlipAddress = await coinFlip.getAddress();
 
@@ -63,7 +64,7 @@ async function deployContracts() {
         coinFlip: {
             address: coinFlipAddress,
             abi: coinFlipJson.abi,
-            arguments: [minBet, maxBet, playFeePercentage, playFeeDecimal, erc20TokenAddress, randContractAddress],
+            arguments: [minBet, maxBet, playFeePercentage, erc20TokenAddress, randContractAddress],
         },
     };
 
