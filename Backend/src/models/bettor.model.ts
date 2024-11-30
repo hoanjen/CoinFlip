@@ -25,13 +25,13 @@ const bettorSchema = new mongoose.Schema(
             required: true,
         },
         blockTimeStamp: {
-            type: Number,
+            type: BigInt,
             required: true,
         },
     },
     { timestamps: true },
 );
 
-const Balance = mongoose.model('Bettor', bettorSchema);
+const Bettor = mongoose.model('Bettor', bettorSchema);
 
-export default Balance;
+export default Bettor;

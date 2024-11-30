@@ -9,25 +9,34 @@ import ExceptionError from '../utils/exceptionError';
 import { StatusCodes } from 'http-status-codes';
 import tokenService from './token.service';
 import userService from './user.service';
-const getNonce = async () => {
-    const nonce = crypto.randomBytes(32).toString('hex');
+import Betting from '../models/betting.model';
+import Bettor from '../models/bettor.model';
 
-    return nonce;
+const createBetting = async (
+    sender: string,
+    gameId: BigInt,
+    startBlock: BigInt,
+    endBlock: BigInt,
+    blockTimeStamp: BigInt,
+) => {
+    await Betting.create({ gameOver: false, startBlock, endBlock, idBettingOnchain: gameId, blockTimeStamp });
 };
 
-const signWallet = async (nonce: string, walletAddress: string, signature: string) => {
-    const walletCheck = await ethers.verifyMessage(nonce, signature);
-    if (walletCheck !== walletAddress) {
-        throw new ExceptionError(StatusCodes.BAD_REQUEST, 'Invalid signature');
-    }
-    let user = await userService.getUserByWalletAddress(walletAddress);
-
-    if (!user) {
-        user = await userService.createUser({ walletAddress });
-    }
-    const tokens = await tokenService.generateAuthTokens(user.id);
-
-    return tokens;
+const updateBetting = async (gameId: BigInt) => {
+    await Betting.updateOne({ idBettingOnchain: gameId }, { $set: { gameOver: true } });
 };
 
-export default { getNonce, signWallet };
+const createBettor = async (
+    sender: string,
+    gameId: BigInt,
+    amount: BigInt,
+    isHeads: boolean,
+    blockTimeStamp: BigInt,
+    transactionHash: string,
+) => {
+    const betting = await Betting.findOne({ idBettingOnchain: gameId });
+    const user = await userService.getUserByWalletAddress(sender);
+    await Bettor.create({ amount, blockTimeStamp, isHeads, transactionHash, betting: betting?.id, user: user?.id });
+};
+
+export default { createBetting, createBettor, updateBetting };
