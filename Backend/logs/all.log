@@ -197,3 +197,70 @@
 2024-11-30 11:51:36:5136 [32minfo[39m: [32mConnected to MongoDB[39m
 2024-11-30 11:51:43:5143 [32minfo[39m: [32mConnected to MongoDB[39m
 2024-11-30 11:54:15:5415 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 08:01:52:152 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 08:03:02:32 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 08:04:24:424 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 08:14:17:1417 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 08:14:21:1421 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 08:15:32:1532 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 08:23:31:2331 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 08:29:32:2932 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 09:13:37:1337 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 09:13:54:1354 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 09:17:36:1736 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 09:20:04:204 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 09:39:47:3947 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 09:54:53:5453 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:11:13:1113 [35mhttp[39m: [35mGET /api/history 200 121 - 16.662 ms[39m
+[35m[39m
+2024-12-01 10:11:49:1149 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:11:54:1154 [31merror[39m: [31mCannot read properties of undefined (reading 'replace')[39m
+2024-12-01 10:11:54:1154 [35mhttp[39m: [35mGET /api/history/play 500 594 - 28.763 ms[39m
+[35m[39m
+2024-12-01 10:14:10:1410 [31merror[39m: [31mCannot read properties of undefined (reading 'replace')[39m
+2024-12-01 10:14:10:1410 [35mhttp[39m: [35mGET /api/history/play 500 594 - 15.394 ms[39m
+[35m[39m
+2024-12-01 10:14:22:1422 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:15:15:1515 [31merror[39m: [31mDo not know how to serialize a BigInt[39m
+2024-12-01 10:15:15:1515 [35mhttp[39m: [35mGET /api/history/play 500 690 - 28.006 ms[39m
+[35m[39m
+2024-12-01 10:17:19:1719 [31merror[39m: [31mDo not know how to serialize a BigInt[39m
+2024-12-01 10:17:19:1719 [35mhttp[39m: [35mGET /api/history/play 500 690 - 12.845 ms[39m
+[35m[39m
+2024-12-01 10:20:36:2036 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:20:37:2037 [31merror[39m: [31mDo not know how to serialize a BigInt[39m
+2024-12-01 10:20:37:2037 [35mhttp[39m: [35mGET /api/history/play 500 690 - 27.366 ms[39m
+[35m[39m
+2024-12-01 10:20:40:2040 [31merror[39m: [31mDo not know how to serialize a BigInt[39m
+2024-12-01 10:20:40:2040 [35mhttp[39m: [35mGET /api/history/play 500 690 - 9.003 ms[39m
+[35m[39m
+2024-12-01 10:20:46:2046 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:20:52:2052 [31merror[39m: [31mDo not know how to serialize a BigInt[39m
+2024-12-01 10:20:52:2052 [35mhttp[39m: [35mGET /api/history/play 500 690 - 23.381 ms[39m
+[35m[39m
+2024-12-01 10:20:53:2053 [31merror[39m: [31mDo not know how to serialize a BigInt[39m
+2024-12-01 10:20:53:2053 [35mhttp[39m: [35mGET /api/history/play 500 690 - 6.927 ms[39m
+[35m[39m
+2024-12-01 10:25:20:2520 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:30:47:3047 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:30:49:3049 [35mhttp[39m: [35mGET /api/history/play 200 976 - 23.192 ms[39m
+[35m[39m
+2024-12-01 10:31:32:3132 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:31:35:3135 [35mhttp[39m: [35mGET /api/history/play 200 976 - 25.127 ms[39m
+[35m[39m
+2024-12-01 10:31:50:3150 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:31:53:3153 [35mhttp[39m: [35mGET /api/history/play 200 976 - 24.387 ms[39m
+[35m[39m
+2024-12-01 10:33:09:339 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:33:10:3310 [35mhttp[39m: [35mGET /api/history/play 200 453 - 27.174 ms[39m
+[35m[39m
+2024-12-01 10:34:46:3446 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:36:27:3627 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:36:29:3629 [35mhttp[39m: [35mGET /api/history/play 200 451 - 23.893 ms[39m
+[35m[39m
+2024-12-01 10:37:39:3739 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:37:42:3742 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:37:47:3747 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:39:37:3937 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:40:26:4026 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-12-01 10:43:05:435 [32minfo[39m: [32mConnected to MongoDB[39m

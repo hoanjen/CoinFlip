@@ -15,3 +15,11 @@
 2024-11-26 16:33:58:3358 [31merror[39m: [31minvalid BytesLike value (argument="signature", value="312", code=INVALID_ARGUMENT, version=6.13.4)[39m
 2024-11-26 16:36:59:3659 [31merror[39m: [31minvalid raw signature length (argument="signature", value="0xD837ab1cE7e4eA9B1F1173e31Ab90a3a57318546", code=INVALID_ARGUMENT, version=6.13.4)[39m
 2024-11-26 16:41:10:4110 [31merror[39m: [31minvalid raw signature length (argument="signature", value="0xD837ab1cE7e4eA9B1F1173e31Ab90a3a57318546", code=INVALID_ARGUMENT, version=6.13.4)[39m
+2024-12-01 10:11:54:1154 [31merror[39m: [31mCannot read properties of undefined (reading 'replace')[39m
+2024-12-01 10:14:10:1410 [31merror[39m: [31mCannot read properties of undefined (reading 'replace')[39m
+2024-12-01 10:15:15:1515 [31merror[39m: [31mDo not know how to serialize a BigInt[39m
+2024-12-01 10:17:19:1719 [31merror[39m: [31mDo not know how to serialize a BigInt[39m
+2024-12-01 10:20:37:2037 [31merror[39m: [31mDo not know how to serialize a BigInt[39m
+2024-12-01 10:20:40:2040 [31merror[39m: [31mDo not know how to serialize a BigInt[39m
+2024-12-01 10:20:52:2052 [31merror[39m: [31mDo not know how to serialize a BigInt[39m
+2024-12-01 10:20:53:2053 [31merror[39m: [31mDo not know how to serialize a BigInt[39m
