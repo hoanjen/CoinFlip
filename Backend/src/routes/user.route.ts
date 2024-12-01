@@ -11,9 +11,6 @@ userRouter
     .get(auth, userController.getUser)
     .put(validate(userValidation.updateUser), auth, userController.updateUser);
 
-userRouter.route('/').post(validate(userValidation.createUser), userController.createUser);
-
-userRouter.route('/:userId');
-//   .get(validate(userValidation.getUser), userController.getUser)
+userRouter.route('/').get(auth, userController.getUser);
 
 export default userRouter;

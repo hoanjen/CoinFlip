@@ -1,6 +1,6 @@
 {
   "erc20Token": {
-    "address": "0x22a18d6dfd419E1475e2B27896f95B1de9BB28aD",
+    "address": "0xe4D9296e44f2b81D617097c74d3d1EFaB7334AbE",
     "abi": [
       {
         "inputs": [
@@ -358,7 +358,7 @@
     ]
   },
   "randContract": {
-    "address": "0xF2a816Bf1C2A60EcE4D9371E3A5a2dA7CC6B1AFf",
+    "address": "0xa0A7175c93D2B7D619dfeFA7c32E0Fa84a666DFE",
     "abi": [
       {
         "inputs": [],
@@ -394,7 +394,7 @@
     ]
   },
   "coinFlip": {
-    "address": "0x735483048B9F3826F4998C7F63631Ef79746B6B3",
+    "address": "0xd2A945bB2FF6A953Bb658be559485ba497a92731",
     "abi": [
       {
         "inputs": [
@@ -411,11 +411,6 @@
           {
             "internalType": "uint256",
             "name": "feePercent_",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "feeDecimal_",
             "type": "uint256"
           },
           {
@@ -508,49 +503,6 @@
           }
         ],
         "name": "EndGame",
-        "type": "event"
-      },
-      {
-        "anonymous": false,
-        "inputs": [
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "sender",
-            "type": "address"
-          },
-          {
-            "indexed": true,
-            "internalType": "uint256",
-            "name": "gameId",
-            "type": "uint256"
-          },
-          {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "amount",
-            "type": "uint256"
-          },
-          {
-            "indexed": false,
-            "internalType": "bool",
-            "name": "isHeads",
-            "type": "bool"
-          },
-          {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "startBlock",
-            "type": "uint256"
-          },
-          {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "endBlock",
-            "type": "uint256"
-          }
-        ],
-        "name": "FlipCoin",
         "type": "event"
       },
       {
@@ -708,6 +660,25 @@
           }
         ],
         "name": "StartGame",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "sender",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          }
+        ],
+        "name": "WithdrawCoinAllow",
         "type": "event"
       },
       {
@@ -959,6 +930,13 @@
         "type": "function"
       },
       {
+        "inputs": [],
+        "name": "withdrawERC20",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
         "stateMutability": "payable",
         "type": "receive"
       }
@@ -966,10 +944,9 @@
     "arguments": [
       1,
       10,
-      25,
-      1,
-      "0x22a18d6dfd419E1475e2B27896f95B1de9BB28aD",
-      "0xF2a816Bf1C2A60EcE4D9371E3A5a2dA7CC6B1AFf"
+      10,
+      "0xe4D9296e44f2b81D617097c74d3d1EFaB7334AbE",
+      "0xa0A7175c93D2B7D619dfeFA7c32E0Fa84a666DFE"
     ]
   }
 }

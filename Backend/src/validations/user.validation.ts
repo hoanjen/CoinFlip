@@ -1,6 +1,6 @@
 import Joi from 'joi';
 
-export const createUser = {
+const createUser = {
     body: Joi.object().keys({
         email: Joi.string().email(),
         username: Joi.string(),
@@ -8,7 +8,7 @@ export const createUser = {
     }),
 };
 
-export const updateUser = {
+const updateUser = {
     body: Joi.object().keys({
         email: Joi.string().email(),
         username: Joi.string(),
@@ -16,7 +16,7 @@ export const updateUser = {
     }),
 };
 
-export const getUsers = {
+const getUsers = {
     query: Joi.object().keys({
         email: Joi.string(),
         sortBy: Joi.string(),
@@ -25,7 +25,7 @@ export const getUsers = {
     }),
 };
 
-export const deleteUser = {
+const deleteUser = {
     params: Joi.object().keys({
         userId: Joi.string(),
     }),

@@ -1,16 +1,7 @@
-import User from '../models/user.model';
-import { tokenTypes } from '../types/token.type';
-import jwt, { JwtPayload } from 'jsonwebtoken';
-import config from '../config/config';
-import { Request } from 'express';
-import crypto from 'crypto';
-import { ethers } from 'ethers';
-import ExceptionError from '../utils/exceptionError';
-import { StatusCodes } from 'http-status-codes';
-import tokenService from './token.service';
 import userService from './user.service';
 import Betting from '../models/betting.model';
 import Bettor from '../models/bettor.model';
+import pick from '../utils/pick';
 
 const createBetting = async (
     sender: string,
@@ -20,6 +11,19 @@ const createBetting = async (
     blockTimeStamp: BigInt,
 ) => {
     await Betting.create({ gameOver: false, startBlock, endBlock, idBettingOnchain: gameId, blockTimeStamp });
+};
+
+const queryBetting = async (bettingQuery: any) => {
+    const filter = pick(bettingQuery, ['idBettingOnchain']);
+    const options = pick(bettingQuery, ['sortBy', 'limit', 'page', 'populate']);
+    if (bettingQuery.createdAt) {
+        const dateValue = bettingQuery.createdAt;
+        let dateStart = new Date(dateValue.split('/')[0]);
+        let dateEnd = new Date(dateValue.split('/')[1]);
+        dateEnd.setDate(dateEnd.getDate() + 1);
+        filter['createdAt'] = { $gte: dateStart, $lte: dateEnd };
+    }
+    return await Betting.paginate(filter, options);
 };
 
 const updateBetting = async (gameId: BigInt) => {
@@ -36,7 +40,23 @@ const createBettor = async (
 ) => {
     const betting = await Betting.findOne({ idBettingOnchain: gameId });
     const user = await userService.getUserByWalletAddress(sender);
-    await Bettor.create({ amount, blockTimeStamp, isHeads, transactionHash, betting: betting?.id, user: user?.id });
+    await Bettor.create({
+        amount,
+        blockTimeStamp,
+        isHeads,
+        transactionHash,
+        betting: betting?.id,
+        user: user?.id,
+        player: sender,
+    });
 };
 
-export default { createBetting, createBettor, updateBetting };
+const getBettingByIdOnchain = async (gameId: BigInt) => {
+    return await Betting.findOne({ idBettingOnchain: gameId });
+};
+
+const getCurrentBetting = async () => {
+    return await Betting.findOne().sort({ createdAt: -1 });
+};
+
+export default { createBetting, createBettor, updateBetting, getBettingByIdOnchain, queryBetting, getCurrentBetting };

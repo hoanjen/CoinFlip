@@ -12,6 +12,10 @@ const bettorSchema = new mongoose.Schema(
             ref: 'Betting',
             required: true,
         },
+        player: {
+            type: String,
+            required: true,
+        },
         transactionHash: {
             type: String,
             required: true,
@@ -31,6 +35,14 @@ const bettorSchema = new mongoose.Schema(
     },
     { timestamps: true },
 );
+
+bettorSchema.set('toJSON', {
+    transform: function (doc, ret) {
+        ret.amount = ret.amount.toString();
+        ret.blockTimeStamp = ret.blockTimeStamp.toString();
+        return ret;
+    },
+});
 
 const Bettor = mongoose.model('Bettor', bettorSchema);
 

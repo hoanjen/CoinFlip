@@ -6,7 +6,9 @@ import contractJson from '../contract.json';
 import synchronizeService from '../services/synchronize.service';
 import transactionService from '../services/transaction.service';
 import { EventLog } from 'web3/types';
+import cron from 'node-cron';
 import bettingService from '../services/betting.service';
+import historyClaimService from '../services/history-claim.service';
 const web3 = new Web3(config.onchain.network_rpc_url);
 
 const contracts: Record<string, Contract<any>> = {
@@ -21,11 +23,11 @@ const onJobGetDataFromSmartContract = async (): Promise<void> => {
 
         const lastSynchronized = await synchronizeService.getLastSynchronize();
         const lastBlockSynchronized = lastSynchronized
-            ? Number(lastSynchronized.toBlock) + 1
+            ? Number(lastSynchronized.toBlock)
             : config.onchain.block_number_start;
         const lastBlockOnchain = Math.min(Number(currentBlock), lastBlockSynchronized + 10000);
 
-        //   await synchronize(lastBlockSynchronized, lastBlockOnchain);
+        await synchronize(lastBlockSynchronized, lastBlockOnchain);
     } catch (err) {
         console.error(err);
     }
@@ -74,6 +76,8 @@ const handleSyncCoinFlip = async (event: any, contract: Contract<any>) => {
     const eventName = event.event;
     const contractAddress = contractJson.coinFlip.address;
     const blockTimeStamp = event.blockTimeStamp;
+    const transactionHash = event.transactionHash;
+
     switch (eventName) {
         case 'StartGame': {
             const { sender, gameId, startBlock, endBlock } = event.returnValues;
@@ -91,13 +95,18 @@ const handleSyncCoinFlip = async (event: any, contract: Contract<any>) => {
             await bettingService.updateBetting(gameId);
             break;
         }
+        case 'ClaimCoinWin': {
+            const { sender, gameId, amount } = event.returnValues;
+            await historyClaimService.createHistoryClaim(sender, gameId, amount, blockTimeStamp, transactionHash);
+            break;
+        }
         default:
             break;
     }
 };
 
-async function getContractEvents(blockA: number, blockB: number) {
-    synchronize(7127342, 7128342);
-}
+const startSynchronizeDataFromSmartContract = () => {
+    cron.schedule('*/6 * * * * *', onJobGetDataFromSmartContract);
+};
 
-export { getContractEvents };
+export { startSynchronizeDataFromSmartContract };
